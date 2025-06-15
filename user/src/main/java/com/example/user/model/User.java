@@ -11,6 +11,12 @@ public class User {
     private String name;
     private String email;
 
+    public User() {
+    }
+
+    public User(long l, String test, String s) {
+    }
+
     // Геттеры и сеттеры
     public Long getId() {
         return id;
