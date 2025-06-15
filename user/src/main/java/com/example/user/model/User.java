@@ -1,4 +1,4 @@
-package com.example.userapi.model;
+package com.example.user.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
