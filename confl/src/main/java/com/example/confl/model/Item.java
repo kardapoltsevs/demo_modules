@@ -22,6 +22,9 @@ public class Item {
         this.description = description;
     }
 
+    public Item(Long itemId, String laptop, double v) {
+    }
+
     public Long getId() {
         return id;
     }
