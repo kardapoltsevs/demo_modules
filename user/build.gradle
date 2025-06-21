@@ -24,13 +24,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.postgresql:postgresql'
     runtimeOnly 'com.h2database:h2'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'  // Включает JUnit 5, Mockito и другие тестовые библиотеки
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'          // Явное указание версии (необязательно, так как spring-boot-starter-test уже включает JUnit 5)
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'           // Mockito для JUnit 5
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'          // JUnit 5 engine
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'            // Для запуска тестов в IDE и сборках
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
