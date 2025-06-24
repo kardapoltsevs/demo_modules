@@ -1,7 +1,9 @@
 package com.example.user.controller;
 
 import com.example.user.model.User;
+import com.example.user.model.UserBody;
 import com.example.user.repository.UserRepository;
+import com.example.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,17 +13,16 @@ import java.util.List;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
-
-
+    private UserService userService;
     private UserRepository userRepository;
 
     @GetMapping
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.getAllUsers();
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userRepository.save(user);
+    public User createUser(@RequestBody UserBody userBody) {
+        return userService.addUser(userBody);
     }
 }
