@@ -9,9 +9,14 @@ import java.util.List;
 
 @Service
 public class UserService {
+    public boolean checkEmailExists(String email) {
+        // Логика проверки email в базе данных
+        return userRepository.existsByEmail(email);
+    }
     private final UserRepository userRepository;
     @Autowired
     public UserService(UserRepository userRepository) {this.userRepository = userRepository;}
+    @Autowired
     public List<User> getAllUsers() { return userRepository.findAll();}
     public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
