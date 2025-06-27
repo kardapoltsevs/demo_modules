@@ -23,8 +23,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PostMapping
-    public User createUser(@RequestBody UserBody userBody) {
-        return userService.addUser(userBody);
-    }
+   // @PostMapping
+    //public User createUser(@RequestBody UserBody userBody) {
+     //   return userService.addUser(userBody);
+    //}
 }

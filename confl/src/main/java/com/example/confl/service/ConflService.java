@@ -1,12 +1,12 @@
 package com.example.confl.service;
 
 import com.example.confl.model.Confl;
-import com.example.confl.repository.ConflRepository;
+import com.example.confl.repository.EmailRepository;
 
 public class ConflService {
-    private final ConflRepository conflRepository;
+    private final EmailRepository conflRepository;
 
-    public ConflService(ConflRepository conflRepository) {
+    public ConflService(EmailRepository conflRepository) {
         this.conflRepository = conflRepository;
     }
     //Добавление почты
