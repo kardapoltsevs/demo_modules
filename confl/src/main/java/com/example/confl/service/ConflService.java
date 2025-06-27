@@ -9,7 +9,7 @@ public class ConflService {
     public ConflService(ConflRepository conflRepository) {
         this.conflRepository = conflRepository;
     }
-
+    //Добавление почты
     public Confl addEmail(Confl email){
 
         return conflRepository.save(email);
