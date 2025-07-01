@@ -16,7 +16,6 @@ public class User {
     private Long id;
     private String name;
     private String email;
-
     // почему то не работает @Data
     public void setName(String name) {
         this.name = name;
@@ -24,4 +23,9 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getEmail() {
+        return email;
+    }
+
+
 }
