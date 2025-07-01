@@ -16,7 +16,6 @@ public class User {
     private Long id;
     private String name;
     private String email;
-
     // почему то не работает @Data
     public void setName(String name) {
         this.name = name;

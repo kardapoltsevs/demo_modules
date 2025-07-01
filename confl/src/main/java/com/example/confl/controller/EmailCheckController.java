@@ -14,7 +14,6 @@ import java.util.Map;
 public class EmailCheckController {
     @Autowired
     private EmailCheckService emailCheckService;
-
     public ResponseEntity<?> checkEmail(@RequestParam String email) {
         boolean isAvailable = emailCheckService.isEmailAvailable(email);
         return ResponseEntity.ok().body(Map.of("available", isAvailable));

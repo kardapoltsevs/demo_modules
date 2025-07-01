@@ -17,14 +17,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     private UserRepository userRepository;
-
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
-
-   // @PostMapping
-    //public User createUser(@RequestBody UserBody userBody) {
-     //   return userService.addUser(userBody);
-    //}
 }

@@ -13,8 +13,6 @@ import java.util.Map;
 
 @Service
 public class UserService {
-
-
     private final UserRepository userRepository;
     @Autowired
     public UserService(UserRepository userRepository) {this.userRepository = userRepository;}
@@ -25,12 +23,10 @@ public class UserService {
     }
     @Autowired
     private RestTemplate restTemplate;
-
     public ResponseEntity<?> createUser(User newUser) {
         // Запрос к модулю confl для проверки email
         String checkUrl = "http://localhost:8081/api/email/check?email=" + newUser.getEmail();
         ResponseEntity<Map> response = restTemplate.getForEntity(checkUrl, Map.class);
-
         if (Boolean.TRUE.equals(response.getBody().get("available"))) {
             User savedUser = userRepository.save(newUser);
             return ResponseEntity.ok(savedUser);
