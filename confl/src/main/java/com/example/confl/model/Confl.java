@@ -15,4 +15,8 @@ public class Confl {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String email;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
