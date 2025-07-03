@@ -6,6 +6,7 @@ import com.example.user.repository.UserRepository;
 import com.example.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,5 +21,9 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+    @PostMapping("/api/users")
+    public ResponseEntity<String> handlePostRequest() {
+        return ResponseEntity.ok("");
     }
 }

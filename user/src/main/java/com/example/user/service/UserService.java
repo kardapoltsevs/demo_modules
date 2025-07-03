@@ -25,7 +25,7 @@ public class UserService {
     private RestTemplate restTemplate;
     public ResponseEntity<?> createUser(User newUser) {
         // Запрос к модулю confl для проверки email
-        String checkUrl = "http://localhost:8081/api/email/check?email=" + newUser.getEmail();
+        String checkUrl = "http://localhost:8083/api/email/check?email=" + newUser.getEmail();
         ResponseEntity<Map> response = restTemplate.getForEntity(checkUrl, Map.class);
         if (Boolean.TRUE.equals(response.getBody().get("available"))) {
             User savedUser = userRepository.save(newUser);
