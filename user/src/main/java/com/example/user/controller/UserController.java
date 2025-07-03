@@ -22,8 +22,8 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
-    @PostMapping("/api/users")
-    public ResponseEntity<String> handlePostRequest() {
-        return ResponseEntity.ok("");
+    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return userService.saveUser(user);
     }
 }
