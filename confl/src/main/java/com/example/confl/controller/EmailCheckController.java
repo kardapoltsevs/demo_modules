@@ -15,16 +15,15 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/email")
 public class EmailCheckController {
-    @Autowired
     private final EmailCheckService emailCheckService;
+    private final ConflService conflService;
+
     @Autowired
     public EmailCheckController(EmailCheckService emailCheckService,
                                 ConflService conflService) {
         this.emailCheckService = emailCheckService;
-        this.conflService = conflService;  // Инициализируем
+        this.conflService = conflService;
     }
-    @Autowired
-    private final ConflService conflService;
 
 
     @GetMapping("/check")

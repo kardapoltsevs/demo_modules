@@ -16,6 +16,7 @@ import java.util.List;
 public class ConflController {
     @Autowired
     private ConflService conflService;
+    //Для того чтоб делать запросы в базу емэйлов
     @GetMapping
     public List<Confl> getAllEmails() {
         return conflService.getAllEmails();
