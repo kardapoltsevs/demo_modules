@@ -1,7 +1,6 @@
 package com.example.user.controller;
 
 import com.example.user.model.User;
-import com.example.user.model.UserBody;
 import com.example.user.repository.UserRepository;
 import com.example.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,8 @@ public class UserController {
         return userService.getAllUsers();
     }
     @PostMapping
-    public User addUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public ResponseEntity<?> addUser(@RequestBody User user) {
+        //return userService.saveUser(user);
+        return userService.createUser(user);
     }
 }

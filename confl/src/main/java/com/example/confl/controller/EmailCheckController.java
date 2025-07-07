@@ -5,6 +5,7 @@ import com.example.confl.service.ConflService;
 import com.example.confl.service.EmailCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,19 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/email")
 public class EmailCheckController {
-    private ConflService conflService;
     @Autowired
-    private EmailCheckService emailCheckService;
+    private final EmailCheckService emailCheckService;
+    @Autowired
+    public EmailCheckController(EmailCheckService emailCheckService,
+                                ConflService conflService) {
+        this.emailCheckService = emailCheckService;
+        this.conflService = conflService;  // Инициализируем
+    }
+    @Autowired
+    private final ConflService conflService;
+
+
+    @GetMapping("/check")
     public ResponseEntity<?> checkEmail(@RequestParam String email) {
         boolean isAvailable = emailCheckService.isEmailAvailable(email);
         if(isAvailable) {
