@@ -5,6 +5,8 @@ import com.example.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -29,7 +31,7 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public ResponseEntity<?> createUser(User newUser) {
+    public ResponseEntity<?> createUser(@Validated @RequestBody User newUser) {
         // Запрос к модулю confl для проверки email
         String checkUrl = "http://localhost:8082/api/email/check?email=" + newUser.getEmail();
         ResponseEntity<Map> response = restTemplate.getForEntity(checkUrl, Map.class);

@@ -24,8 +24,6 @@ public class EmailCheckController {
         this.emailCheckService = emailCheckService;
         this.conflService = conflService;
     }
-
-
     @GetMapping("/check")
     public ResponseEntity<?> checkEmail(@RequestParam String email) {
         boolean isAvailable = emailCheckService.isEmailAvailable(email);
